@@ -1,0 +1,57 @@
+@use "../../styles/abstracts/mixins" as m;
+
+.container {
+	@include m.respond-to(md) {
+		flex-direction: row;
+	}
+
+	height: 100vh;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+	flex-direction: column;
+	text-align: left;
+	max-width: 100%;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	justify-content: space-evenly;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+}
+
+.title {
+	@include m.respond-to(md) {
+		top: 6rem;
+		margin-left: 0;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	position: absolute;
+	top: 3.5rem;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	margin-left: 0.75rem;
+	color: rgb(107 114 128);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.cardContainer {
+	@include m.respond-to(md) {
+		padding: 2.5rem;
+	}
+
+	width: 100%;
+	display: flex;
+	overflow-x: auto;
+	margin-bottom: 1.25rem;
+	padding: 1.25rem;
+	scroll-snap-type: x mandatory;
+
+	> :not([hidden]) ~ :not([hidden]) {
+		margin-left: 1.25rem;
+	}
+}

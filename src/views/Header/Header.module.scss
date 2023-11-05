@@ -1,0 +1,58 @@
+@use "../../styles/abstracts/variables" as v;
+@use "../../styles/abstracts/mixins" as m;
+
+.header {
+	@include m.respond-to(md) {
+		padding: 1.25rem;
+	}
+	@include m.respond-to(xl) {
+		align-items: center;
+	}
+
+	position: sticky;
+	top: 0;
+	padding: 0.5rem 1.25rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	max-width: 80rem;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 20;
+
+	// @media (min-width: 768px) {
+	// 	padding: 1.25rem;
+	// }
+
+	// @media (min-width: 1280px) {
+	// 	align-items: center;
+	// }
+}
+
+.container,
+.contact {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.contact {
+	color: rgb(209 213 219);
+	cursor: pointer;
+
+	> .icon {
+		cursor: pointer;
+	}
+
+	p {
+		text-transform: uppercase;
+		display: none;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		color: rgb(156 163 175);
+
+		@media (min-width: 768px) {
+			display: inline-flex;
+		}
+	}
+}

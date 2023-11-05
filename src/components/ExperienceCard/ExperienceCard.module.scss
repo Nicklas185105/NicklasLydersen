@@ -1,0 +1,151 @@
+@use "../../styles/abstracts/mixins" as m;
+
+.article {
+	@include m.respond-to(md) {
+		margin-top: 0;
+		height: 650px;
+		width: 500px;
+		opacity: 0.4;
+		cursor: pointer;
+		transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	@include m.respond-to(lg) {
+		height: 900px;
+	}
+	@include m.respond-to(xl) {
+		width: 900px;
+	}
+
+	border-radius: 0.5rem;
+	flex-shrink: 0;
+	margin-top: 4rem;
+	height: 500px;
+	width: 300px;
+	scroll-snap-align: center;
+	background-color: #292929;
+	overflow: hidden;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	> div {
+		padding: 1.25rem 2.5rem 0 2.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		> :not([hidden]) ~ :not([hidden]) {
+			margin-top: 1.75rem;
+		}
+	}
+}
+
+.image {
+	@include m.respond-to(md) {
+		width: 8rem;
+		height: 8rem;
+	}
+	@include m.respond-to(xl) {
+		width: 200px;
+		height: 200px;
+	}
+
+	width: 5rem;
+	height: 5rem;
+	border-radius: 9999px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.container {
+	@include m.respond-to(md) {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
+	padding-left: 0rem;
+	padding-right: 0rem;
+
+	> h4 {
+		@include m.respond-to(md) {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		font-weight: 300;
+	}
+
+	.p {
+		@include m.respond-to(md) {
+			font-size: 1.5rem;
+			line-height: 2rem;
+		}
+
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		font-weight: 700;
+		margin-top: 0.25rem;
+	}
+}
+
+.technologies {
+	display: flex;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+
+	> :not([hidden]) ~ :not([hidden]) {
+		margin-left: 0.5rem;
+	}
+}
+
+.tImage {
+	@include m.respond-to(md) {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	position: relative;
+	height: 1.25rem;
+	width: 1.25rem;
+
+	img {
+		border-radius: 9999px;
+	}
+}
+
+.date {
+	@include m.respond-to(md) {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
+	text-transform: uppercase;
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+	color: rgb(209 213 219);
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.points {
+	@include m.respond-to(md) {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		max-height: 24rem;
+	}
+
+	list-style-type: disc;
+	margin-left: 1.25rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	padding-right: 1.25rem;
+	max-height: 13rem;
+	overflow-y: auto;
+
+	> :not([hidden]) ~ :not([hidden]) {
+		margin-top: 1rem;
+	}
+}

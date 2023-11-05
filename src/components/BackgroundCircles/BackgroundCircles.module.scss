@@ -1,0 +1,93 @@
+@use "../../styles/abstracts/variables" as v;
+@use "../../styles/abstracts/mixins" as m;
+@use "../../styles/abstracts/keyframes" as *;
+
+.container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5 {
+	position: absolute;
+	border: 1px solid rgb(51 51 51);
+	border-radius: 9999px;
+	margin-top: 13rem;
+	animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.circle1 {
+	@include m.respond-to(md) {
+		height: 150px;
+		width: 150px;
+	}
+	@include m.respond-to(lg) {
+		height: 200px;
+		width: 200px;
+	}
+
+	height: 100px;
+	width: 100px;
+}
+
+.circle2 {
+	@include m.respond-to(md) {
+		height: 200px;
+		width: 200px;
+	}
+	@include m.respond-to(lg) {
+		height: 250px;
+		width: 250px;
+	}
+
+	height: 150px;
+	width: 150px;
+}
+
+.circle3 {
+	@include m.respond-to(md) {
+		height: 250px;
+		width: 250px;
+	}
+	@include m.respond-to(lg) {
+		height: 300px;
+		width: 300px;
+	}
+
+	height: 200px;
+	width: 200px;
+}
+
+.circle4 {
+	@include m.respond-to(md) {
+		height: 300px;
+		width: 300px;
+	}
+	@include m.respond-to(lg) {
+		height: 350px;
+		width: 350px;
+	}
+
+	height: 250px;
+	width: 250px;
+	border-color: #f7ab0a;
+}
+
+.circle5 {
+	@include m.respond-to(md) {
+		height: 350px;
+		width: 350px;
+	}
+	@include m.respond-to(lg) {
+		height: 400px;
+		width: 400px;
+	}
+
+	height: 300px;
+	width: 300px;
+}

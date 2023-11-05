@@ -1,0 +1,117 @@
+@use "../../styles/abstracts/mixins" as m;
+
+.container {
+	@include m.respond-to(md) {
+		text-align: left;
+		flex-direction: row;
+	}
+
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	height: 100vh;
+	text-align: center;
+	max-width: 80rem;
+	padding: 0 2.5rem;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	align-items: center;
+}
+
+.title {
+	@include m.respond-to(md) {
+		top: 6rem;
+		margin-left: 0;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	position: absolute;
+	top: 3.5rem;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	margin-left: 0.75rem;
+	color: rgb(107 114 128);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.image {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+
+	> .iContainer {
+		@include m.respond-to(sm) {
+			width: 14rem;
+			height: 14rem;
+		}
+		@include m.respond-to(md) {
+			width: 16rem;
+			height: 24rem;
+			margin-bottom: 0;
+		}
+		@include m.respond-to(xl) {
+			width: 500px;
+			height: 600px;
+		}
+
+		position: relative;
+		width: 8rem;
+		height: 8rem;
+		margin-bottom: -8rem;
+
+		img {
+			@include m.respond-to(md) {
+				border-radius: 0.5rem;
+			}
+			@include m.respond-to(xl) {
+				width: 500px;
+				height: 600px;
+			}
+
+			flex-shrink: 0;
+			border-radius: 9999px;
+		}
+	}
+}
+
+.textContainer {
+	@include m.respond-to(md) {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
+	padding-left: 0px;
+	padding-right: 0px;
+
+	> :not([hidden]) ~ :not([hidden]) {
+		margin-top: 2.5rem;
+	}
+
+	> h4 {
+		@include m.respond-to(md) {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 600;
+
+		> span {
+			text-decoration-line: underline;
+			text-decoration-color: rgb(247 171 10 / 0.5);
+		}
+	}
+
+	> p {
+		@include m.respond-to(md) {
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+}
