@@ -21,8 +21,10 @@ export interface Technology {
 }
 
 export interface Skill {
+	id: number;
 	image: Image;
-	progress: number;
+	// progress: number;
+	link: string;
 	title: string;
 }
 
@@ -34,7 +36,7 @@ export interface Experience {
 	isCurrentlyWorkingHere: boolean;
 	jobTitle: string;
 	points: string[];
-	technologies: Technology[];
+	technologies: Skill[];
 }
 
 export interface Project {
@@ -42,7 +44,7 @@ export interface Project {
 	image: Image;
 	linkToBuild: string;
 	summary: string;
-	technologies: Technology[];
+	technologies: Skill[];
 	// slug: Slug;
 }
 

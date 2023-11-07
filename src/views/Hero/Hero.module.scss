@@ -1,4 +1,3 @@
-@use "../../styles/abstracts/variables" as v;
 @use "../../styles/abstracts/mixins" as m;
 
 .container {
@@ -29,6 +28,7 @@
 
 	img {
 		border-radius: 9999px;
+		object-fit: cover;
 	}
 }
 

@@ -40,8 +40,8 @@ export default function ExperienceCard({ experience }: Props) {
 							<div key={index} className={styles.tImage}>
 								<Image
 									src={technology.image.src}
-									layout="fill"
-									objectFit="cover"
+									fill
+									loading="lazy"
 									alt={technology.image.alt}
 								/>
 							</div>

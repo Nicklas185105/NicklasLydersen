@@ -45,8 +45,8 @@ export default function About({ pageInfo }: Props) {
 					<Image
 						src={pageInfo.profilePic.src}
 						alt={pageInfo.profilePic.alt}
-						layout="fill"
-						objectFit="cover"
+						fill
+						loading="lazy"
 					/>
 				</motion.div>
 			</div>

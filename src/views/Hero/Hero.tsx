@@ -29,8 +29,8 @@ export default function Hero({ pageInfo }: Props) {
 			<div className={styles.image}>
 				<Image
 					src={pageInfo.heroImage.src}
-					layout="fill"
-					objectFit="cover"
+					fill
+					loading="lazy"
 					alt={pageInfo.heroImage.alt}
 				/>
 			</div>

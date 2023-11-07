@@ -1,0 +1,174 @@
+@use "../../styles/abstracts/mixins" as m;
+
+.container {
+	@include m.respond-to(md) {
+		flex-direction: row;
+	}
+
+	height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	text-align: left;
+	max-width: 100%;
+	justify-content: space-evenly;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	z-index: 0;
+}
+
+.title {
+	@include m.respond-to(md) {
+		top: 6rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	position: absolute;
+	top: 3.5rem;
+	text-transform: uppercase;
+	letter-spacing: 20px;
+	color: rgb(107 114 128);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.case {
+	position: relative;
+	width: 100%;
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scroll-snap-type: x mandatory;
+	z-index: 20;
+
+	&Container {
+		width: 100vw;
+		display: flex;
+		flex-shrink: 0;
+		flex-direction: column;
+		scroll-snap-align: center;
+		align-items: center;
+		justify-content: center;
+		// margin: 4rem;
+		height: 99vh;
+
+		> .div {
+			@include m.respond-to(md) {
+				padding: 11rem;
+
+				> :not([hidden]) ~ :not([hidden]) {
+					margin-top: 2.5rem;
+				}
+			}
+
+			height: 100%;
+			width: 100%;
+			padding: 4rem;
+			align-items: center;
+			justify-content: center;
+			display: flex;
+			flex-shrink: 0;
+			flex-direction: column;
+		}
+	}
+
+	&Content {
+		@include m.respond-to(md) {
+			padding: 0 2.5rem;
+
+			> :not([hidden]) ~ :not([hidden]) {
+				margin-top: 2.5rem;
+			}
+		}
+
+		padding: 0;
+		max-width: 72rem;
+
+		> :not([hidden]) ~ :not([hidden]) {
+			margin-top: 0.5rem;
+		}
+	}
+
+	&Title {
+		@include m.respond-to(md) {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 600;
+		text-align: center;
+
+		> span {
+			text-decoration: underline rgb(247 171 10 / 0.5);
+		}
+	}
+}
+
+.image {
+	@include m.respond-to(lg) {
+		width: 50%;
+		height: 50%;
+	}
+
+	position: relative;
+	width: 16rem;
+	height: 10rem;
+
+	img {
+		object-fit: contain;
+	}
+}
+
+.technologies {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.5rem;
+
+	> :not([hidden]) ~ :not([hidden]) {
+		margin-left: 0.5rem;
+	}
+
+	.skill {
+		@include m.respond-to(md) {
+			height: 2.5rem;
+			width: 2.5rem;
+		}
+
+		position: relative;
+		height: 1.25rem;
+		width: 1.25rem;
+
+		img {
+			border-radius: 9999px;
+			object-fit: cover;
+		}
+	}
+}
+
+.summary {
+	@include m.respond-to(md) {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		text-align: left;
+	}
+
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	text-align: center;
+}
+
+.line {
+	width: 100%;
+	position: absolute;
+	top: 30%;
+	left: 0;
+	background-color: rgb(247 171 10 / 0.1);
+	height: 500px;
+	transform: skewY(-12deg);
+}

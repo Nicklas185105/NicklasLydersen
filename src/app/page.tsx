@@ -1,7 +1,7 @@
 import styles from './page.module.scss';
 import clsx from 'clsx';
-import { About, Header, Hero, WorkExperience } from 'views';
-import { pageInfo, experiences, socials } from 'data';
+import { About, Header, Hero, WorkExperience, Skills, Projects } from 'views';
+import { pageInfo, experiences, socials, skills, projects } from 'data';
 
 export default function Home() {
 	return (
@@ -26,12 +26,12 @@ export default function Home() {
 
 			{/* Skills */}
 			<section id="skills" className={styles.section}>
-				{/* <Skills skills={skills} /> */}
+				<Skills skills={skills} />
 			</section>
 
 			{/* Projects */}
 			<section id="projects" className={styles.section}>
-				{/* <Projects projects={projects} /> */}
+				<Projects projects={projects} />
 			</section>
 
 			{/* Contact Me */}
