@@ -11,9 +11,11 @@
   "dependencies": {
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
+    "lucide-react": "^0.292.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.48.2",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^6.4.0",
     "sass": "^1.69.5"
